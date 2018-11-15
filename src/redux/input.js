@@ -5,6 +5,8 @@ export const Operations = (state={operations: [], interimResult: ""}, action) =>
         case ActionTypes.ADD_INPUT:
             var character = action.payload;
             return {...state, operations: state.operations.concat(character)};
+        case ActionTypes.REMOVE_INPUT:
+            return {...state, operations: state.operations.slice(0, -1)};
         case ActionTypes.CLEAR_INPUT:
             return {...state, operations: []};
         case ActionTypes.ADD_RESULT:

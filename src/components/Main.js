@@ -16,8 +16,12 @@ class Main extends Component {
                 <div className="row">
                     <Col md={4}>
                         <Input 
+                            className="rounded-0"
                             type="text" 
-                            value={this.props.operations.operations.join('')} 
+                            bsSize="lg"
+                            value={this.props.operations.operations.join('')}
+                            readOnly
+                            
                         />
                     </Col>
                 </div>

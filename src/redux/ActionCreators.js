@@ -20,6 +20,10 @@ export const addInput = (character) => ({
     payload: character
 });
 
+export const removeInput = () => ({
+    type: ActionTypes.REMOVE_INPUT,
+});
+
 export const clearInput = () => ({
     type: ActionTypes.CLEAR_INPUT
 });

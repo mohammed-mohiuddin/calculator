@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button} from 'reactstrap';
 import {connect} from 'react-redux';
-import {clearInput, addInput, addResult, copyResult, pasteResult} from '../redux/ActionCreators';
+import {clearInput, addInput, addResult, copyResult, pasteResult, removeInput} from '../redux/ActionCreators';
 import {CalculateOperations} from '../components/Calculate';
 
 class CreateButton extends Component{
@@ -28,6 +28,9 @@ class CreateButton extends Component{
          case 'paste':
             this.props.pasteResult();
             break;
+         case 'x':
+            this.props.removeInput();
+            break;
          default:
             this.props.addInput(label);
       }
@@ -35,8 +38,7 @@ class CreateButton extends Component{
 
    render(){
       return <Button 
-               className="w-100" 
-               value={this.props.label} 
+               className="w-100 rounded-0" 
                color="success" size="lg" 
                onClick={this.handleClick}>
                   {this.props.label}
@@ -56,7 +58,8 @@ const mapDispatchToProps = dispatch => ({
    clearInput: () => {dispatch(clearInput())},
    addResult: (result) => {dispatch(addResult(result))},
    copyResult: () => {dispatch(copyResult())},
-   pasteResult: () => {dispatch(pasteResult())}
+   pasteResult: () => {dispatch(pasteResult())},
+   removeInput: () => {dispatch(removeInput())}
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateButton);
