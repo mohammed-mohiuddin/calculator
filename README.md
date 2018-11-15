@@ -13,3 +13,7 @@ Simple calculator using react.
 3. Start the development server:
 
 ### `npm start`
+
+4. Test the project:
+
+### `npm test`

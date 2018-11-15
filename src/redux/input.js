@@ -12,9 +12,11 @@ export const Operations = (state={operations: [], interimResult: ""}, action) =>
         case ActionTypes.ADD_RESULT:
             return {...state, operations: [action.payload]};
         case ActionTypes.COPY_RESULT:
-            return {...state, interimResult: state.operations};
+            const intermediateResult = state.operations.join('');
+            return {...state, interimResult: intermediateResult};
         case ActionTypes.PASTE_RESULT:
-            return {...state, operations: state.operations.concat(state.interimResult), interimResult: ""}
+            const copiedResult = state.interimResult
+            return {...state, operations: state.operations.concat(copiedResult), interimResult: ""}
         default:
             return state;
     }

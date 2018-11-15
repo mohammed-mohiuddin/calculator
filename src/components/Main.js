@@ -5,7 +5,7 @@ import {fetchLabels, addInput, clearInput} from '../redux/ActionCreators';
 import {connect} from 'react-redux';
 
 
-class Main extends Component {
+export class Main extends Component {
     componentDidMount(){
         this.props.fetchLabels();
     }
@@ -21,8 +21,12 @@ class Main extends Component {
                             bsSize="lg"
                             value={this.props.operations.operations.join('')}
                             readOnly
-                            
                         />
+                    </Col>
+                </div>
+                <div className="row">
+                    <Col md={4}>
+                        <span className="fas fa-backspace"></span>
                     </Col>
                 </div>
                 <div className="row">

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {clearInput, addInput, addResult, copyResult, pasteResult, removeInput} from '../redux/ActionCreators';
 import {CalculateOperations} from '../components/Calculate';
 
-class CreateButton extends Component{
+export class CreateButton extends Component{
    constructor(props){
       super(props);
 
@@ -38,7 +38,7 @@ class CreateButton extends Component{
 
    render(){
       return <Button 
-               className="w-100 rounded-0" 
+               className="border  dark w-100 rounded-0" 
                color="success" size="lg" 
                onClick={this.handleClick}>
                   {this.props.label}
